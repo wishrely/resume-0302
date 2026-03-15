@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷 - 亞洲大學</title>
+    <style>
+        /* CSS 樣式設定 */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 標題與聯絡資訊 */
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        .info {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .info span {
+            margin: 0 10px;
+        }
+
+        /* 區塊樣式 */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* 技能標籤 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: transform 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            background: var(--accent-color);
+        }
+
+        /* 按鈕效果 */
+        #download-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+
+        #download-btn:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 10px; padding: 20px; }
+            .item-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="resume-content">
+    <header>
+        <h1>個人姓名 / Name</h1>
+        <div class="info">
+            <span>學號：114055050</span> | 
+            <span>亞洲大學 Asia University</span> <br>
+            <span>Email: <a href="mailto:wishrely@gmail.com">wishrely@gmail.com</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>關於我 / About Me</h2>
+        <p>
+            這裡填寫一段簡短的自我介紹。描述你的性格特質、學習動機，以及你目前專注的領域。
+            身為亞洲大學的一員，我致力於將課堂所學應用於實際專案中。
+        </p>
+    </section>
+
+    <section>
+        <h2>教育背景 / Education</h2>
+        <div class="item">
+            <div class="item-header">
+                <span>亞洲大學 - 某某學系</span>
+                <span>2025 - 至今</span>
+            </div>
+            <ul>
+                <li>相關課程：數據分析、網頁開發、UI/UX 設計</li>
+                <li>曾獲得某某獎學金或競賽名次</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>專業技能 / Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">專案管理</span>
+            <span class="skill-tag">英文溝通</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>專案經歷 / Projects</h2>
+        <div class="item">
+            <div class="item-header">
+                <span>個人網頁履歷開發</span>
+                <span>2026.03</span>
+            </div>
+            <p>使用 HTML/CSS 獨立建置互動式履歷，學習響應式設計與前端排版技巧。</p>
+        </div>
+    </section>
+
+    <button id="download-btn">列印 / 另存 PDF</button>
+</div>
+
+<script>
+    // JavaScript 互動功能
+    document.getElementById('download-btn').addEventListener('click', function() {
+        // 隱藏按鈕後觸發列印功能
+        this.style.display = 'none';
+        window.print();
+        
+        // 列印視窗關閉後恢復按鈕顯示
+        setTimeout(() => {
+            this.style.display = 'block';
+        }, 1000);
+    });
+
+    // 簡單的進入動畫
+    window.onload = () => {
+        const container = document.getElementById('resume-content');
+        container.style.opacity = 0;
+        container.style.transition = 'opacity 1.5s';
+        setTimeout(() => {
+            container.style.opacity = 1;
+        }, 100);
+    };
+</script>
+
+</body>
+</html>
