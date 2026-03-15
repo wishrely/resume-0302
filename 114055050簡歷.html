@@ -39,6 +39,22 @@
             text-align: center;
         }
 
+        /* 照片樣式 */
+        .profile-pic-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         h1 {
             margin: 0;
             color: var(--primary-color);
@@ -129,6 +145,10 @@
 
 <div class="container" id="resume-content">
     <header>
+        <div class="profile-pic-container">
+            <img src="images/图片_20251228121547_43_2.jpg" alt="個人照片" class="profile-pic">
+        </div>
+        
         <h1>個人姓名 / Name</h1>
         <div class="info">
             <span>學號：114055050</span> | 
@@ -187,11 +207,8 @@
 <script>
     // JavaScript 互動功能
     document.getElementById('download-btn').addEventListener('click', function() {
-        // 隱藏按鈕後觸發列印功能
         this.style.display = 'none';
         window.print();
-        
-        // 列印視窗關閉後恢復按鈕顯示
         setTimeout(() => {
             this.style.display = 'block';
         }, 1000);
